@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-size: 10px;
+  min-width: 320px;
+}  
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+#root {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+a {
+  color: inherit;
+} 
