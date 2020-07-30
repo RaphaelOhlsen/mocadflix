@@ -1,6 +1,7 @@
 :root {
   --primary: #2A7AE4;
   --black: #000000;
+  --blackMedium: rgba(0, 0, 0, .6);
   --blackLighter: #9E9E9E;
   --grayLight: #F5F5F5;
   --grayMedium: #e5e5e5; 
@@ -8,4 +9,5 @@
   --white: #FFFFFF;
   --frontEnd: #6BD1FF;
   --backEnd: #00C86F;
+  --border: #DC3E29;
 }

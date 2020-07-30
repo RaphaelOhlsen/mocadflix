@@ -2,12 +2,11 @@ import styled from 'styled-components';
 import Logo from '../Logo';
 
 const Footer = styled.footer`
-  background-color: var(--black);
   font-size: 1.8rem;
   font-weight: 300;
   padding: 2rem 0;
   color: var(--white);
-  border-top: 4px solid var(--primary);
+  border-top: 4px solid var(--border);
 
   /* position: absolute;
   left: 0;

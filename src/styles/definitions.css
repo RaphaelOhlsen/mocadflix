@@ -5,19 +5,22 @@
 html, body {
   font-size: 10px;
   min-width: 320px;
+  height: 100vh;
 }  
 
 body {
   font-family: 'Roboto', sans-serif;
+  background-color: var(--black);
 }
 
-#root {
+/* #root {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
   justify-content: space-between;
-}
+} */
 
 a {
   color: inherit;
+  text-decoration: none;
 } 
