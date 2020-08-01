@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Tag from '../Tag';
 import Title from '../Title';
 
-import container from '../../tools/container';
+import container from '../../styles/tools/container';
 
 export const TextContainer = styled.div`
   padding-top: 1rem;
@@ -11,7 +11,7 @@ export const TextContainer = styled.div`
   max-width: 45%;
 
   & > ${Tag} {
-    margin-bottom: 4rem
+    margin-bottom: 4rem;
   }
 
   & > ${Title} {
@@ -27,11 +27,6 @@ const Banner = styled.section`
   align-items: center;
   max-height: 70vh;
   height: 100vh;
-
- 
-
-
 `;
-
 
 export default Banner;

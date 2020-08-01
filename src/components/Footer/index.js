@@ -18,12 +18,10 @@ const Footer = styled.footer`
   justify-content: center;
   align-items: center;
 
-
   & > ${Logo} {
     margin-bottom: 2rem;
-    height: 6rem
+    height: 6rem;
   }
-  
 `;
 
 export default Footer;

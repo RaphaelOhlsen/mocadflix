@@ -1,0 +1,9 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eskint": true, 
+  },
+  "editor.tabSize": 2,
+  "rules": {
+    "react-prop-types": 0
+  }
+}

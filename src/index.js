@@ -15,7 +15,7 @@ ReactDOM.render(
     <BrowserRouter>
       <Switch>
         <Route path="/" exact component={App} />
-        <Route path="/video/new" componet={Video} />
+        <Route path="/video/new" component={Video} />
       </Switch>
     </BrowserRouter>
   </React.StrictMode>,

@@ -3,7 +3,6 @@ import styled from 'styled-components';
 const Button = styled.button`
   background: var(--dark);
   border: 1px solid var(--grayLight);
-  border-radius: 4px;
   box-sizing: border-box;
   color: var(--grayLight);
   cursor: pointer;
@@ -11,11 +10,17 @@ const Button = styled.button`
   font-style: normal;
   font-weight: 600;
   padding: 1.2rem 3rem;
+  transition: background-color 200ms linear,
+    transform 200ms cubic-bezier(0, 0, 0.73, 2.24);
 
-  transition: opacity .3s;
-  &:hover,
-  &:focus {
-    opacity: .5;
+  &:hover {
+    background-color: var(--border);
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transition: background-color 200ms linear, transform 100ms linear;
+    transform: scale(0.95);
   }
 `;
 
