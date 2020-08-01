@@ -10,25 +10,23 @@ const Button = styled.button`
   font-style: normal;
   font-weight: 600;
   cursor: pointer;
-  transition: background-color 200ms linear,
-    transform 200ms cubic-bezier(0, 0, 0.73, 2.24);
+  overflow: hidden;
 
   &::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
-    width: 0;
+    width: 100%;
     height: 100%;
     background-color: var(--border);
+    transform: translateX(-100%);
+    transition: transform 300ms linear;
     z-index: -1;
   }
 
-  &:hover {
-    &::before {
-      width: 100%;
-      transition: width 250ms linear;
-    }
+  &:hover::before {
+    transform: translateX(0);
   }
 `;
 
