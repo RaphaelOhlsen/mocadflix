@@ -20,13 +20,14 @@ const Button = styled.button`
     width: 100%;
     height: 100%;
     background-color: var(--border);
-    transform: translateX(-100%);
-    transition: transform 300ms linear;
+    transform-origin: bottom left;
+    transform: translateX(100%) scaleX(1.5) skew(-30deg);
+    transition: transform 200ms linear;
     z-index: -1;
   }
 
   &:hover::before {
-    transform: translateX(0);
+    transform: translateX(-30%) scaleX(1.5) skew(-30deg);
   }
 `;
 
