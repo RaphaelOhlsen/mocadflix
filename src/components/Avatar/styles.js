@@ -9,7 +9,7 @@ const Channel = styled.figcaption`
 const Avatar = styled.img`
   width: 5rem;
   border-radius: 50%;
-  border: .2rem solid var(--primary);
+  border: 0.2rem solid var(--primary);
   margin-right: 1rem;
 `;
 

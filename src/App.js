@@ -1,35 +1,75 @@
 import React from 'react';
 
-// import './styles/settings/colors.css';
-// import './styles/reset.css';
-// import './styles/definitions.css';
-
-import LogoImersao from './components/LogoImersao';
-import Header, { Wrapper } from './components/Header';
-import Logo from './components/Logo';
-import Button from './components/Button';
-import Footer from './components/Footer';
+import HeaderOpen from './components/HeaderOpen';
+import FooterOpen from './components/FooterOpen';
 import Banner, { TextContainer } from './components/Banner';
-import Link from './components/Link';
+import Section from './components/Section';
 import Tag from './components/Tag';
 import Title from './components/Title';
 import Description from './components/Description';
 import Thumbnail from './components/Thumbnail';
+import Carousel from './components/Carousel';
 
 import maujor from './assets/img/maujor.png';
 import avatar from './assets/img/avatar.png';
 
+const videos = [
+  {
+    id: 1,
+    src: maujor,
+    alt: 'Thumbnail do Maujor',
+    title: 'MAUJOR - O Dinossauro das CSS',
+    avatar,
+    channelName: 'CDF TV',
+    timer: '00:01:00',
+    link: 'https://www.youtube.com/watch?v=G1wFdb9OM_U&t=50s',
+  },
+  {
+    id: 2,
+    src: maujor,
+    alt: 'Thumbnail do Maujor',
+    title: 'MAUJOR - O Dinossauro das CSS',
+    avatar,
+    channelName: 'CDF TV',
+    timer: '00:01:00',
+    link: 'https://www.youtube.com/watch?v=G1wFdb9OM_U&t=50s',
+  },
+  {
+    id: 3,
+    src: maujor,
+    alt: 'Thumbnail do Maujor',
+    title: 'MAUJOR - O Dinossauro das CSS',
+    avatar,
+    channelName: 'CDF TV',
+    timer: '00:01:00',
+    link: 'https://www.youtube.com/watch?v=G1wFdb9OM_U&t=50s',
+  },
+  {
+    id: 4,
+    src: maujor,
+    alt: 'Thumbnail do Maujor',
+    title: 'MAUJOR - O Dinossauro das CSS',
+    avatar,
+    channelName: 'CDF TV',
+    timer: '00:01:00',
+    link: 'https://www.youtube.com/watch?v=G1wFdb9OM_U&t=50s',
+  },
+  {
+    id: 5,
+    src: maujor,
+    alt: 'Thumbnail do Maujor',
+    title: 'MAUJOR - O Dinossauro das CSS',
+    avatar,
+    channelName: 'CDF TV',
+    timer: '00:01:00',
+    link: 'https://www.youtube.com/watch?v=G1wFdb9OM_U&t=50s',
+  },
+];
+
 function App() {
   return (
     <>
-      <Header>
-        <Wrapper>
-          <Logo />
-          <Button as="a" href="/video/new">
-            Novo vídeo
-          </Button>
-        </Wrapper>
-      </Header>
+      <HeaderOpen />
       <Banner>
         <TextContainer>
           <Tag> Front End</Tag>
@@ -48,17 +88,19 @@ function App() {
           title="MAUJOR - O Dinossauro das CSS"
           avatar={avatar}
           channelName="CDF TV"
+          timer="00:01:00"
         />
       </Banner>
-      <Footer>
-        <Logo />
-        <p>
-          Site feito na{' '}
-          <Link href="https://alura.com.br">
-            <LogoImersao />
-          </Link>
-        </p>
-      </Footer>
+      <Section>
+        <Tag>Mocad Flint</Tag>
+        <Description>
+          MOCAD - Man of Certain Age Developer - é uma comunidade voltada a
+          incentivar pessoas de meia idade a entrarem na área da programação.
+        </Description>
+        <Tag small>Apenas um teste</Tag>
+        <Carousel videos={videos} />
+      </Section>
+      <FooterOpen />
     </>
   );
 }

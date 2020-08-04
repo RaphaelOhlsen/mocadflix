@@ -21,13 +21,13 @@ const Button = styled.button`
     height: 100%;
     background-color: var(--border);
     transform-origin: bottom left;
-    transform: translateX(100%) scaleX(1.5) skew(-30deg);
+    transform: translateX(100%) scaleX(1.5) skew(-45deg);
     transition: transform 200ms linear;
     z-index: -1;
   }
 
   &:hover::before {
-    transform: translateX(-30%) scaleX(1.5) skew(-30deg);
+    transform: translateX(-45%) scaleX(1.5) skew(-30deg);
   }
 `;
 

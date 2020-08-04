@@ -1,27 +1,19 @@
 import styled from 'styled-components';
 
-import container from '../../styles/tools/container';
-
 import Button from '../Button';
 import Logo from '../Logo';
 
 const Header = styled.header`
-  /* height: 94px; */
-
   z-index: 100;
-  padding: 2rem 0;
-
+  padding: 2rem 3rem;
   border-bottom: 4px solid var(--border);
 
   @media (max-width: 800px) {
-    /* height: 50px; */
     padding: 1.5rem 1.6rem;
   }
 `;
 
 export const Wrapper = styled.div`
-  ${container}
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,14 +22,12 @@ export const Wrapper = styled.div`
     justify-content: center;
 
     & > ${Logo} {
-      height: 30px;
+      height: 35px;
     }
 
     & > ${Button} {
       background-color: var(--primary);
       border: 0;
-      /* border-radius: 0; */
-
       position: fixed;
       bottom: 0;
       right: 0;
