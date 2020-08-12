@@ -3,18 +3,18 @@ import { WrapperThumb, Backgorund } from '../Thumbnail/styles';
 
 import arrow from '../../assets/img/arrow.svg';
 
+const thumbWidth = 400;
+const spaceRight = 20;
+const spaceRightLeft = 30;
+
 const Wrapper = styled.div`
+  --space-right: ${spaceRight}px;
   display: flex;
   transition: transform 200ms linear;
 
   & > ${Backgorund} {
-    margin-right: 2rem;
+    margin-right: var(--space-right);
   }
-
-  ${({ move }) =>
-    css`
-      transform: translateX(calc(var(--thumb-width) * ${move}));
-    `}
 `;
 
 const Arrow = css`
@@ -32,7 +32,6 @@ const Arrow = css`
     content: url(${arrow});
     display: inline-block;
     opacity: 1;
-    outline: 0;
     transition: transform 100ms linear;
   }
 `;
@@ -40,7 +39,7 @@ const Arrow = css`
 const Right = styled.button`
   ${Arrow};
   right: 0;
-
+  opacity: 0;
   &::after {
     transform: rotate(-90deg);
   }
@@ -58,7 +57,7 @@ const Right = styled.button`
 const Left = styled.button`
   ${Arrow};
   left: 0;
-
+  opacity: 0;
   &::after {
     transform: rotate(90deg);
   }
@@ -73,30 +72,72 @@ const Left = styled.button`
   }
 `;
 
+function moveCarousel(move, moveLastRight) {
+  const oneStep = (thumbWidth + spaceRight) * move;
+  const lastStep = (moveLastRight + spaceRightLeft) * -1;
+  if (oneStep !== 0 && oneStep < lastStep) {
+    return css`
+      & > ${Wrapper} {
+        transform: translateX(${lastStep}px);
+      }
+      &:hover > ${Right} {
+        display: none;
+        opacity: 0;
+      }
+    `;
+  }
+  return css`
+    & > ${Wrapper} {
+      transform: translateX(${oneStep}px);
+    }
+  `;
+}
+
+function leftShow(move) {
+  return move < 0;
+}
+
 const CarouselStyle = styled.div`
   --space-top-bottom: 2rem;
-  --thumb-width: 40rem;
+  --space-right-left: ${spaceRightLeft}px;
+  --thumb-width: ${thumbWidth}px;
   position: relative;
   display: flex;
   align-items: center;
   align-self: flex-start;
   box-sizing: border-box;
   width: 100%;
-  padding: var(--space-top-bottom) 3rem;
+  padding: var(--space-top-bottom) var(--space-right-left);
   overflow: hidden;
 
   & ${WrapperThumb} {
     width: var(--thumb-width);
+    box-sizing: border-box;
   }
 
-  &:hover > ${Right}, &:hover > ${Left} {
+  &:hover > ${Right} {
+    display: block;
     opacity: 0.8;
+  }
+
+  &:hover > ${Left} {
+    ${({ move }) =>
+      leftShow(move)
+        ? css`
+            display: block;
+            opacity: 0.8;
+          `
+        : css`
+            display: none;
+          `}
   }
 
   & > ${Right}:hover {
     opacity: 0.9;
     transform-origin: right center;
   }
+
+  ${({ move, moveLastRight }) => moveCarousel(move, moveLastRight)};
 `;
 
 export { Left, Right, CarouselStyle, Wrapper };
